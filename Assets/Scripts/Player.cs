@@ -87,9 +87,9 @@ public class Player : MonoBehaviour
     {
         if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) { return; }
         myAnimator.SetTrigger("Dying");
-        myRigidBody.velocity = deathKick;
-
-        this.isAlive = false;
+        //myRigidBody.velocity = deathKick;
+        //this.isAlive = false;
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }
 
     private void FlipSprite()
