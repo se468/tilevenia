@@ -7,7 +7,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour
 {
     // Config
-    [SerializeField] float runSpeed = 12f;
+    [SerializeField] float runSpeed = 8f;
     [SerializeField] float jumpSpeed = 30f;
     [SerializeField] Vector2 deathKick = new Vector2(0f, 100f);
     // State
@@ -28,11 +28,16 @@ public class Player : MonoBehaviour
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeetCollider = GetComponent<BoxCollider2D>();
         myGravity = myRigidBody.gravityScale;
+        this.isAlive = true;
     }
 
     void Update()
     {
         if (!this.isAlive) { return; }
+
+        float controlThrowHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        float controlThrowVertical = CrossPlatformInputManager.GetAxis("Vertical");
+
         this.Run();
         this.ClimbLadder();
         this.Jump();
@@ -87,8 +92,8 @@ public class Player : MonoBehaviour
     {
         if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) { return; }
         myAnimator.SetTrigger("Dying");
-        //myRigidBody.velocity = deathKick;
-        //this.isAlive = false;
+        myRigidBody.velocity = deathKick;
+        this.isAlive = false;
         FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }
 

@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] float LevelLoadDelay = 2f;
+    [SerializeField] float LevelLoadDelay = 0.5f;
     [SerializeField] float LevelExitSlowMoFactor = 0.2f;
 
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger Enter");
         StartCoroutine(LoadNextLevel());
     }
 
