@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         this.ClimbLadder();
         this.Jump();
         this.FlipSprite();
-        this.Die();
+        this.CheckTouchingHazards();
     }
 
     private void Run()
@@ -88,13 +88,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void CheckTouchingHazards()
     {
-        if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards"))) { return; }
-        myAnimator.SetTrigger("Dying");
-        myRigidBody.velocity = deathKick;
-        this.isAlive = false;
-        FindObjectOfType<GameSession>().ProcessPlayerDeath();
+        if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Hazards"))) { return; }
+
     }
 
     private void FlipSprite()
@@ -105,4 +102,21 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Die() {
+        myAnimator.SetTrigger("Dying");
+        myRigidBody.velocity = deathKick;
+        this.isAlive = false;
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
+    }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (LayerMask.LayerToName(col.gameObject.layer) == "Enemy" &&
+            col.otherCollider.GetType() == typeof(UnityEngine.CapsuleCollider2D)) {
+            GameObject enemy = col.gameObject;
+            bool enemyIsAlive = enemy.GetComponent<EnemyMovement>().isAlive;
+            if (enemyIsAlive) {
+                this.Die();
+            }
+        }
+    }
 }
