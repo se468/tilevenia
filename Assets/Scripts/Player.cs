@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
     private void CheckTouchingHazards()
     {
         if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Hazards"))) { return; }
-
+        Die();
     }
 
     private void FlipSprite()
@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        if (LayerMask.LayerToName(col.gameObject.layer) == "Enemy" &&
+        if (LayerMask.LayerToName(col.gameObject.layer) == "Enemy"  &&
             col.otherCollider.GetType() == typeof(UnityEngine.CapsuleCollider2D)) {
             GameObject enemy = col.gameObject;
             bool enemyIsAlive = enemy.GetComponent<EnemyMovement>().isAlive;
