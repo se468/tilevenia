@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: defa0c43ed3344ab8879d966cf9c497c
+guid: 5747c0c818b644cc4ba7291099624263
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SPA-Enemy-Right_0
-    21300002: SPA-Enemy-Right_1
-    21300004: SPA-Enemy-Right_2
-    21300006: SPA-Enemy-Right_3
-    21300008: SPA-Enemy-Right_4
-    21300010: SPA-Enemy-Right_5
+    21300000: Choco Sidescroller (2)_0
+    21300002: Choco Sidescroller (2)_1
+    21300004: Choco Sidescroller (2)_2
+    21300006: Choco Sidescroller (2)_3
+    21300008: Choco Sidescroller (2)_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -51,7 +50,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,121 +100,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SPA-Enemy-Right_0
+      name: Choco Sidescroller (2)_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 128
+        width: 60
+        height: 54
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c02b86abb3cda4ceba758dd7c0759aa8
+      spriteID: 6fbcb79db525545d5b91e9b9d3e8c8b6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA-Enemy-Right_1
+      name: Choco Sidescroller (2)_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 138
+        y: 128
+        width: 102
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d83789e5122074dd49fa420be819a9da
+      spriteID: 57d0466916e3144e499545f8846050ee
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA-Enemy-Right_2
+      name: Choco Sidescroller (2)_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 4
+        y: 70
+        width: 120
+        height: 56
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72302ff8822504c629362ffd55fe2379
+      spriteID: ceada6696fc8a47fea850ecc405c0425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA-Enemy-Right_3
+      name: Choco Sidescroller (2)_3
       rect:
         serializedVersion: 2
-        x: 125
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 132
+        y: 64
+        width: 112
+        height: 58
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e03d686e716604eca877240ab52d30d0
+      spriteID: 2eed8bfa0ad7647e5b75d1be0c4d7f77
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SPA-Enemy-Right_4
+      name: Choco Sidescroller (2)_4
       rect:
         serializedVersion: 2
-        x: 163
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 24
+        y: 4
+        width: 90
+        height: 58
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eaafb756a32841d3aab373cbffd1551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SPA-Enemy-Right_5
-      rect:
-        serializedVersion: 2
-        x: 201
-        y: 7
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4d7c8dbba56e45fe9a1ec12af327d99
+      spriteID: 345de5fe2a91f401aa5106dbdc868027
       vertices: []
       indices: 
       edges: []
@@ -223,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4bd5ef13c34e047ebb81790331ed7bfe
+    spriteID: 33242381fb4bd4a30802f64c73b00bd7
     vertices: []
     indices: 
     edges: []
