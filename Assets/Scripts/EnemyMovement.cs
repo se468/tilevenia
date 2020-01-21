@@ -18,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        mySpriteRenderer.flipX = true;
         this.isAlive = true;
         myAnimator.SetBool("isAlive", true);
     }
@@ -42,8 +43,8 @@ public class EnemyMovement : MonoBehaviour
         this.isAlive = false;
         myAnimator.SetBool("isAlive", false);
         myBodyCollider.enabled = false;
-        mySpriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        Invoke("Deactivate", 2);
+        //mySpriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        //Invoke("Deactivate", 2);
     }
 
     void Deactivate() {
