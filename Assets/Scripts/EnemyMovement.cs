@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
     CapsuleCollider2D myBodyCollider;
     SpriteRenderer mySpriteRenderer;
 
+    [SerializeField] AudioClip EnemyDieSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +45,7 @@ public class EnemyMovement : MonoBehaviour
         this.isAlive = false;
         myAnimator.SetBool("isAlive", false);
         myBodyCollider.enabled = false;
-        //mySpriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        //Invoke("Deactivate", 2);
+        AudioSource.PlayClipAtPoint(EnemyDieSFX, Camera.main.transform.position);
     }
 
     void Deactivate() {
@@ -60,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
             col.collider.GetType() == typeof(UnityEngine.BoxCollider2D)) {
 
             Rigidbody2D playerBody = col.gameObject.GetComponent<Rigidbody2D>();
-            playerBody.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
+            playerBody.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
             this.Die();
         }
     }

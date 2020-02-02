@@ -7,8 +7,8 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour
 {
     // Config
-    [SerializeField] float runSpeed = 8f;
-    [SerializeField] float jumpSpeed = 30f;
+    [SerializeField] float runSpeed = 6f;
+    [SerializeField] float jumpSpeed = 28f;
     [SerializeField] Vector2 deathKick = new Vector2(0f, 100f);
     // State
     bool isAlive = true;
