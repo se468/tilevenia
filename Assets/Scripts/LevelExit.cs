@@ -7,11 +7,12 @@ public class LevelExit : MonoBehaviour
 {
     [SerializeField] float LevelLoadDelay = 0.5f;
     [SerializeField] float LevelExitSlowMoFactor = 0.2f;
-
+    [SerializeField] AudioClip LevelWinSFX;
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
         StartCoroutine(LoadNextLevel());
+        AudioSource.PlayClipAtPoint(LevelWinSFX, Camera.main.transform.position);
     }
 
     IEnumerator LoadNextLevel()
