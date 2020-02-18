@@ -25,7 +25,7 @@ public class GameSession : MonoBehaviour
 
     void Start()
     {
-        livesText.text = playerLives.ToString();
+        livesText.text = "Lives: " + playerLives.ToString();
         scoreText.text = "Score: " + score.ToString();
     }
 
@@ -45,12 +45,18 @@ public class GameSession : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
+    public void AddToLives(int livesToAdd)
+    {
+        this.playerLives += 1;
+        livesText.text = "Lives: " + playerLives.ToString();
+    }
+
     private void TakeLife()
     {
         this.playerLives -= 1;
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        livesText.text = playerLives.ToString();
+        livesText.text = "Lives: " + playerLives.ToString();
     }
 
     private void ResetGameSession()
