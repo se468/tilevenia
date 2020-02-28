@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         float controlThrowVertical = CrossPlatformInputManager.GetAxis("Vertical");
 
         this.Run();
-        this.ClimbLadder();
         this.Jump();
         this.FlipSprite();
         this.CheckTouchingHazards();
@@ -59,22 +58,6 @@ public class Player : MonoBehaviour
         else {
             myAnimator.SetBool("Running", false);
         }
-    }
-
-    private void ClimbLadder()
-    {
-        if (!myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
-            myAnimator.SetBool("Climbing", false);
-            myRigidBody.gravityScale = myGravity;
-            return;
-        }
-        myRigidBody.gravityScale = 0;
-        float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        Vector2 playerVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * runSpeed);
-        myRigidBody.velocity = playerVelocity;
-
-        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
-        myAnimator.SetBool("Climbing", playerHasVerticalSpeed);
     }
 
     private void Jump()

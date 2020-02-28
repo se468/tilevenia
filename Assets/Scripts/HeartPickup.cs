@@ -6,9 +6,13 @@ public class HeartPickup : MonoBehaviour
 {
     [SerializeField] AudioClip heartPickupSFX;
     private void OnTriggerEnter2D(Collider2D collider) {
-        AudioSource.PlayClipAtPoint(heartPickupSFX, Camera.main.transform.position);
-        Destroy(this.gameObject);
+        if(LayerMask.LayerToName(collider.gameObject.layer) == "Player" &&
+            collider.GetType() == typeof(UnityEngine.CapsuleCollider2D))
+        {
+            AudioSource.PlayClipAtPoint(heartPickupSFX, Camera.main.transform.position);
+            Destroy(this.gameObject);
 
-        FindObjectOfType<GameSession>().AddToLives(1);
+            FindObjectOfType<GameSession>().AddToLives(1);
+        }
     }
 }

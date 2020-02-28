@@ -13,8 +13,8 @@ public class GameSession : MonoBehaviour
 
     private void Awake()
     {
-        int numGameSessions = FindObjectsOfType<GameSession>().Length;
-        if (numGameSessions > 1)
+        int numGameObject = FindObjectsOfType<GameSession>().Length;
+        if (numGameObject > 1)
         {
             Destroy(gameObject);
         }
@@ -47,6 +47,7 @@ public class GameSession : MonoBehaviour
 
     public void AddToLives(int livesToAdd)
     {
+        Debug.Log("Add Lives");
         this.playerLives += 1;
         livesText.text = "Lives: " + playerLives.ToString();
     }
